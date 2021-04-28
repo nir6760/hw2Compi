@@ -12,12 +12,15 @@
 %}
 
 %right ASSIGN
-%left OR AND EQUALOP
+%left OR
+%left AND
+%left EQUALOP
 %right IF NOT
 %token VOID INT BYTE B BOOL TRUE FALSE RETURN WHILE BREAK CONTINUE SWITCH CASE DEFAULT COLON SC COMMA ID NUM STRING
 %nonassoc RELOP
+%left PLUS MINUS
 %left DIV MULT
-%left PLUS MINUS LPAREN RPAREN LBRACE RBRACE
+%left LPAREN RPAREN LBRACE RBRACE
 %nonassoc ELSE
 
 
@@ -108,4 +111,5 @@ int main()
 int yyerror(const char * message)
 {
 	errorSyn(yylineno);
+	exit(0);
 }

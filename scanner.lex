@@ -73,6 +73,7 @@ default                        return DEFAULT;
 \"([^\n\r\"\\]|\\[rnt"\\])+\" 	return STRING;
 .		{
 			errorLex(yylineno);
+			exit(0);
 		}
 
 %%
